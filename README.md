@@ -64,5 +64,3 @@ To simulate a real-world business analytics task: take messy raw sales data, cle
 | Excel Formulas | Calculated fields, data validation |
 
 ---
-
-## 📁 Repository Structure
