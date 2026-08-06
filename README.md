@@ -4,6 +4,12 @@
 
 ---
 
+📊 Dashboard Preview
+
+
+<img width="606" height="296" alt="dashboard (2)" src="https://github.com/user-attachments/assets/ad746762-618c-4040-b21b-f78010d1cab9" />
+
+
 ## 🎯 Project Objective
 
 To simulate a real-world business analytics task: take messy raw sales data, clean it, and turn it into a decision-ready dashboard that a CEO or regional manager could actually use to spot trends and act on them — using nothing but Excel.
