@@ -1,38 +1,20 @@
-# Project Organization Guide
+# Project Structure Guide
 
-Use this layout as the project evolves. Keep the current workbook and source files in place until you have confirmed their purpose and updated any links.
+The repository groups files by purpose:
 
-```text
-globalmart-excel-sales-dashboard/
-├── README.md
-├── data/
-│   ├── raw/                 # Original dataset; share only if permitted
-│   └── processed/           # Cleaned, reproducible outputs
-├── workbook/                # Main Excel workbook
-├── screenshots/             # Dashboard previews for documentation
-├── docs/
-│   ├── project-structure.md
-│   ├── data-dictionary.md
-│   └── analysis-notes.md
-└── .gitignore
-```
+- `data/raw/` — original source dataset. Preserve this as the source of truth.
+- `workbook/` — primary Excel dashboard and cleaned data.
+- `screenshots/dashboard-preview.png` — main preview displayed by the README.
+- `screenshots/dashboards/` — other dashboard screenshots.
+- `screenshots/data-cleaning/` — screenshots documenting data-cleaning steps.
+- `screenshots/insights/` — KPI and analysis chart screenshots.
+- `docs/` — project documentation, data definitions, and validated findings.
 
-## What belongs where?
+## Maintenance checklist
 
-- **data/raw/** — original dataset, with source and license notes.
-- **data/processed/** — cleaned datasets used by the workbook; document transformations.
-- **workbook/** — the main `.xlsx` workbook and any essential supporting workbook files.
-- **screenshots/** — optimized PNG/JPG screenshots used in the README.
-- **docs/data-dictionary.md** — column names, definitions, units, and example values.
-- **docs/analysis-notes.md** — validated KPIs, findings, caveats, and recommendations.
-
-## Organization checklist
-
-- [ ] Identify the authoritative workbook and dataset.
-- [ ] Check that the workbook opens and slicers/charts still work.
-- [ ] Keep only useful deliverables; avoid duplicate exports and temporary files.
-- [ ] Document the dataset source, reporting period, and metric definitions.
-- [ ] Replace placeholder findings with values verified against the workbook.
-- [ ] Confirm that data can legally and safely be published before committing it.
-
-This guide describes the recommended future layout; it does not claim that all listed folders or files already exist.
+- Keep original data separate from processed outputs.
+- Avoid uploading temporary Office files and duplicate exports.
+- Verify the workbook still opens and slicers/charts work after local changes.
+- Update README links if any filenames or folders change.
+- Document data provenance and sharing restrictions before publishing source data.
+- Validate every numerical insight before adding it to the README.
