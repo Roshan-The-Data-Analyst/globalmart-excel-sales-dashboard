@@ -1,0 +1,20 @@
+# Microsoft Office temporary and lock files
+~$*.xlsx
+~$*.xlsm
+~$*.xlsb
+~$*.xls
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / local workspace
+.vscode/
+.idea/
+
+# Python cache, if analysis scripts are added later
+__pycache__/
+*.py[cod]
+.venv/
+venv/
