@@ -304,5 +304,16 @@
     "No currency or code is present, so regional monetary comparisons may be invalid if currencies differ.",
     "No cost data is present, so profit and margin cannot be calculated.",
     "Return reasons are absent; high rates identify investigation priorities, not causes."
-  ]
+  ],
+  "range_violations": {
+    "Quantity": 0,
+    "UnitPrice": 0,
+    "DiscountPct": 0,
+    "DiscountAmount": 0,
+    "GrossSales": 0,
+    "NetSales": 0,
+    "DeliveryDays": 0,
+    "Rating": 0,
+    "Returned": 0
+  }
 }
