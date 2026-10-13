@@ -1,92 +1,79 @@
-# GlobalMart Sales Dashboard
+# GlobalMart Sales Dashboard — Excel E-commerce Analytics
 
-An interactive sales dashboard built in Microsoft Excel using PivotTables, PivotCharts, slicers, and data-cleaning workflows. It explores a simulated e-commerce dataset spanning Sri Lanka, the UAE, and Oman.
+An interactive Excel dashboard project based on a **simulated** e-commerce dataset covering Sri Lanka, the UAE, and Oman from 1 January 2023 through 31 December 2025. It demonstrates data validation, KPI design, PivotTables, PivotCharts, Power Query workflows, and decision-focused analysis.
 
 ![GlobalMart dashboard preview](screenshots/dashboard-preview.png)
 
-## Project overview
+## Executive summary
 
-The goal is to turn transaction-level data into a clear, decision-ready view of business performance for regional managers and other stakeholders.
+| KPI | Verified result |
+|---|---:|
+| Order records | 15,150 |
+| Unique customers | 3,173 |
+| Gross sales | 5,004,016.22 |
+| Discounts | 384,831.78 |
+| Net sales | 4,619,184.44 |
+| Weighted discount rate | 7.69% |
+| Average order value | 304.90 |
+| Returned orders | 879 (5.80%) |
+| Average rating | 4.14 / 5 |
+| Average delivery time | 5.51 days |
 
-| Item | Details |
-|---|---|
-| Project type | Excel data analysis and dashboard |
-| Dataset | Simulated e-commerce transactions |
-| Records | 15,150+ transactions (as documented for this project) |
-| Regions | Sri Lanka, UAE, Oman |
-| Tools | Microsoft Excel, PivotTables, PivotCharts, slicers, Power Query |
+**Important:** The dataset has no currency field or currency code. Monetary amounts above are in **unspecified dataset units**, not a claimed real-world currency. Do not compare country totals as currency-safe measures until currency treatment is confirmed. The data is simulated and must not be presented as actual company performance.
 
-## Project files
+## Key findings
 
-- [Excel dashboard and cleaned data](workbook/GlobalMart_Sales_Dashboard_and_Cleaned_Data.xlsx)
-- [Raw dataset](data/raw/globalmart_dataset_raw.csv)
+- **Electronics leads recorded net sales:** 2,811,450.54, or 60.86% of the dataset total. Monitor concentration alongside availability, return rates, and actual margin data.
+- **Country totals:** Sri Lanka records 2,086,536.22 (45.17%), UAE 1,572,152.78 (34.04%), Oman 960,495.44 (20.79%). These are source-unit shares only because currency is not provided.
+- **Mobile App leads the channels:** 2,137,418.69 (46.27%); Website accounts for 39.10% and Marketplace for 14.62%.
+- **Marketplace has the highest observed channel return rate:** 6.57%, versus 5.80% overall. Treat this as an investigation signal, not causation.
+- **Product return watchlist:** T-Shirt 8.07% (33/409), Lamp 7.85% (39/497), Cooking Oil 7.66% (49/640). Return reasons are missing, so causes cannot be inferred.
+- **Annual net sales fell in 2024 and were almost unchanged in 2025:** 1,615,693.86 in 2023; 1,501,828.38 in 2024 (-7.05%); 1,501,662.20 in 2025 (-0.01%). This describes the observed trend but does not explain why it occurred.
+
+See [verified analysis](docs/verified-analysis.md), [business recommendations](docs/business-recommendations.md), and [generated reports](reports/).
+
+## Data validation
+
+The raw CSV contains 15,150 rows and 19 columns. Checks found no missing cells, exact duplicate rows, repeated OrderID values, invalid date strings, or invalid numeric entries in audited fields. GrossSales reconciles to Quantity × UnitPrice at cent precision, and NetSales reconciles to GrossSales − DiscountAmount.
+
+A conventional half-up calculation of DiscountAmount differs by one cent on 368 rows, with no differences larger than one cent. Confirm the source rounding rule before changing values. These checks do not prove that all source business rules are correct or that the data is real.
+
+## Project contents
+
+- [Excel workbook](workbook/GlobalMart_Sales_Dashboard_and_Cleaned_Data.xlsx)
+- [Raw CSV dataset](data/raw/globalmart_dataset_raw.csv)
 - [Dashboard preview](screenshots/dashboard-preview.png)
-- [Additional dashboard screenshots](screenshots/dashboards/)
-- [Data-cleaning screenshots](screenshots/data-cleaning/)
-- [Analysis and KPI screenshots](screenshots/insights/)
-- [Project structure guide](docs/project-structure.md)
+- [KPI summary](reports/kpi_summary.csv)
+- [Annual sales](reports/annual_sales.csv)
+- [Monthly sales](reports/monthly_sales.csv)
+- [Country performance](reports/country_performance.csv)
+- [Category performance](reports/category_performance.csv)
+- [Channel performance](reports/channel_performance.csv)
+- [Product return watchlist](reports/product_returns.csv)
+- [Quality audit JSON](reports/data_quality_audit.json)
 - [Data dictionary](docs/data-dictionary.md)
-- [Analysis notes template](docs/analysis-notes.md)
 
-## Dashboard capabilities
+## Reproduce the analysis
 
-- Summarizes sales by region, product category, and time period.
-- Uses charts to communicate performance patterns and comparisons.
-- Uses slicers for interactive filtering.
-- Presents key metrics in an executive-style dashboard.
+Requires Python 3.10+; the script uses only the standard library:
 
-## Analysis workflow
-
-1. Inspect the source transaction data and understand the fields.
-2. Clean and standardize dates, values, and categories.
-3. Create and validate calculated fields such as revenue.
-4. Build PivotTables to summarize measures and dimensions.
-5. Create PivotCharts and add slicers for interactive exploration.
-6. Validate totals and document findings that are supported by the workbook.
-
-## Repository layout
-
-```text
-globalmart-excel-sales-dashboard/
-├── README.md
-├── .gitignore
-├── data/
-│   └── raw/
-│       └── globalmart_dataset_raw.csv
-├── workbook/
-│   └── GlobalMart_Sales_Dashboard_and_Cleaned_Data.xlsx
-├── screenshots/
-│   ├── dashboard-preview.png
-│   ├── dashboards/
-│   ├── data-cleaning/
-│   └── insights/
-└── docs/
-    ├── project-structure.md
-    ├── data-dictionary.md
-    └── analysis-notes.md
+```bash
+python scripts/analyze_sales.py
 ```
+
+Optional input/output paths:
+
+```bash
+python scripts/analyze_sales.py --input data/raw/globalmart_dataset_raw.csv --output-dir reports
+```
+
+## Next improvements
+
+1. Add currency codes and a consistent conversion policy before regional value comparisons.
+2. Capture return reasons, product condition, and service-level context.
+3. Include cost fields before evaluating profitability.
+4. Track proposed operational changes against a baseline and review date.
 
 ## Skills demonstrated
 
-- Data cleaning and validation
-- Excel formulas and calculated fields
-- PivotTables and PivotCharts
-- Interactive dashboard design with slicers
-- Business-focused data communication
-
-## Findings and recommendations
-
-See [analysis notes](docs/analysis-notes.md) for a structure to record findings. Add actual figures only after checking the workbook and verifying each calculation; do not treat screenshot filenames as evidence of a result.
-
-## How to explore the project
-
-1. Download and open the Excel workbook.
-2. Navigate to the dashboard sheet.
-3. Use the available slicers to filter regions, categories, or dates.
-4. Compare the displayed sales metrics and charts.
-
-## Notes
-
-- The dataset is simulated and should not be presented as actual company sales.
-- Verify the exact reporting period, metric definitions, data types, and currency handling from the workbook before documenting them as confirmed facts.
-- The dataset and workbook are relatively large; keep future exports and temporary files out of the repository unless they are useful project deliverables.
+Microsoft Excel, PivotTables, PivotCharts, slicers, Power Query, data-quality validation, KPI definition, descriptive analysis, Python, and business communication.

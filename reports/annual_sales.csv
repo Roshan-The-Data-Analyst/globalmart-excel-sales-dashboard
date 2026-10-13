@@ -1,0 +1,4 @@
+year,orders,gross_sales,discount_amount,net_sales,average_order_value,returned_orders,return_rate_pct,yoy_net_sales_change_pct
+2023,5105,1753414.11,137720.25,1615693.86,316.49,308,6.03,
+2024,5028,1623177.69,121349.31,1501828.38,298.69,276,5.49,-7.05
+2025,5017,1627424.42,125762.22,1501662.20,299.31,295,5.88,-0.01

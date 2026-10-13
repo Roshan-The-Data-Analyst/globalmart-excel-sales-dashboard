@@ -1,0 +1,4 @@
+name,orders,net_sales,sales_share_pct,average_order_value,returned_orders,return_rate_pct,avg_discount_pct,avg_delivery_days,average_rating
+Mobile App,6879,2137418.69,46.27,310.72,380,5.52,7.74,5.52,4.14
+Website,6033,1806303.54,39.10,299.40,352,5.83,7.82,5.49,4.14
+Marketplace,2238,675462.21,14.62,301.82,147,6.57,7.80,5.57,4.16
