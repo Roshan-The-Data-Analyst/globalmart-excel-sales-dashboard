@@ -1,20 +1,27 @@
 # Project Structure Guide
 
-The repository groups files by purpose:
+```text
+globalmart-excel-sales-dashboard/
+├── README.md
+├── data/raw/globalmart_dataset_raw.csv
+├── workbook/GlobalMart_Sales_Dashboard_and_Cleaned_Data.xlsx
+├── screenshots/
+├── scripts/analyze_sales.py
+├── reports/
+│   ├── kpi_summary.csv
+│   ├── annual_sales.csv
+│   ├── monthly_sales.csv
+│   ├── country_performance.csv
+│   ├── category_performance.csv
+│   ├── channel_performance.csv
+│   ├── product_returns.csv
+│   └── data_quality_audit.json
+└── docs/
+    ├── project-structure.md
+    ├── data-dictionary.md
+    ├── analysis-notes.md
+    ├── verified-analysis.md
+    └── business-recommendations.md
+```
 
-- `data/raw/` — original source dataset. Preserve this as the source of truth.
-- `workbook/` — primary Excel dashboard and cleaned data.
-- `screenshots/dashboard-preview.png` — main preview displayed by the README.
-- `screenshots/dashboards/` — other dashboard screenshots.
-- `screenshots/data-cleaning/` — screenshots documenting data-cleaning steps.
-- `screenshots/insights/` — KPI and analysis chart screenshots.
-- `docs/` — project documentation, data definitions, and validated findings.
-
-## Maintenance checklist
-
-- Keep original data separate from processed outputs.
-- Avoid uploading temporary Office files and duplicate exports.
-- Verify the workbook still opens and slicers/charts work after local changes.
-- Update README links if any filenames or folders change.
-- Document data provenance and sharing restrictions before publishing source data.
-- Validate every numerical insight before adding it to the README.
+Run `python scripts/analyze_sales.py` from the repository root to regenerate reports. Keep raw data unchanged, verify currency and rounding policies, and validate changes to workbook charts/slicers before publishing.

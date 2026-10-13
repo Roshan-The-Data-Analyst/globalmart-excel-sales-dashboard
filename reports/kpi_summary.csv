@@ -1,0 +1,16 @@
+metric,value,definition
+Order count,15150,Distinct OrderID values; one row per order in this source.
+Unique customers,3173,Distinct CustomerID values.
+Date range,2023-01-01 to 2025-12-31,Minimum and maximum OrderDate.
+Gross sales,5004016.22,Sum of GrossSales; currency is not specified.
+Discount amount,384831.78,Sum of DiscountAmount.
+Net sales,4619184.44,Sum of NetSales; currency is not specified.
+Weighted discount rate (%),7.69,Sum of DiscountAmount divided by sum of GrossSales.
+Average row discount (%),7.79,Arithmetic mean of DiscountPct; not weighted discount rate.
+Average order value,304.90,Sum of NetSales divided by distinct orders; currency unspecified.
+Returned orders,879,Distinct OrderID values with Returned = Yes.
+Return rate (%),5.80,Returned orders divided by distinct orders.
+Average rating (out of 5),4.14,Arithmetic mean of Rating.
+Average delivery days,5.51,Arithmetic mean of DeliveryDays.
+Average quantity per order,1.93,Arithmetic mean of Quantity.
+Orders rated 4 or 5 (%),80.34,Share of orders with Rating >= 4.

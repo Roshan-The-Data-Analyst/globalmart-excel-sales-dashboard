@@ -1,0 +1,7 @@
+name,orders,net_sales,sales_share_pct,average_order_value,returned_orders,return_rate_pct,avg_discount_pct,avg_delivery_days,average_rating
+Electronics,2529,2811450.54,60.86,1111.68,150,5.93,7.86,5.44,4.15
+Home & Living,2488,577734.72,12.51,232.21,147,5.91,7.86,5.61,4.15
+Sports,2500,471917.70,10.22,188.77,150,6.00,7.80,5.45,4.13
+Beauty,2531,362744.66,7.85,143.32,127,5.02,7.91,5.47,4.13
+Fashion,2564,297424.26,6.44,116.00,158,6.16,7.75,5.54,4.13
+Groceries,2538,97912.56,2.12,38.58,147,5.79,7.53,5.59,4.18

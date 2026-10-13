@@ -1,0 +1,308 @@
+{
+  "source": "data/raw/globalmart_dataset_raw.csv",
+  "dataset_type": "Simulated e-commerce data, as described in project documentation",
+  "row_count": 15150,
+  "column_count": 19,
+  "columns": [
+    "OrderID",
+    "OrderDate",
+    "Country",
+    "City",
+    "Category",
+    "Product",
+    "Quantity",
+    "UnitPrice",
+    "DiscountPct",
+    "DiscountAmount",
+    "GrossSales",
+    "NetSales",
+    "PaymentMethod",
+    "Channel",
+    "CustomerSegment",
+    "CustomerID",
+    "DeliveryDays",
+    "Returned",
+    "Rating"
+  ],
+  "date_range": {
+    "min": "2023-01-01",
+    "max": "2025-12-31"
+  },
+  "missing_values_by_column": {
+    "OrderID": 0,
+    "OrderDate": 0,
+    "Country": 0,
+    "City": 0,
+    "Category": 0,
+    "Product": 0,
+    "Quantity": 0,
+    "UnitPrice": 0,
+    "DiscountPct": 0,
+    "DiscountAmount": 0,
+    "GrossSales": 0,
+    "NetSales": 0,
+    "PaymentMethod": 0,
+    "Channel": 0,
+    "CustomerSegment": 0,
+    "CustomerID": 0,
+    "DeliveryDays": 0,
+    "Returned": 0,
+    "Rating": 0
+  },
+  "total_missing_cells": 0,
+  "exact_duplicate_rows": 0,
+  "distinct_order_ids": 15150,
+  "duplicate_order_id_occurrences": 0,
+  "distinct_customer_ids": 3173,
+  "invalid_date_rows": 0,
+  "invalid_numeric_values_by_column": {
+    "Quantity": 0,
+    "UnitPrice": 0,
+    "DiscountPct": 0,
+    "DiscountAmount": 0,
+    "GrossSales": 0,
+    "NetSales": 0,
+    "DeliveryDays": 0,
+    "Rating": 0
+  },
+  "observed_numeric_ranges": {
+    "Quantity": {
+      "min": 1,
+      "max": 5
+    },
+    "UnitPrice": {
+      "min": 3,
+      "max": 1199.51
+    },
+    "DiscountPct": {
+      "min": 0,
+      "max": 25
+    },
+    "DiscountAmount": {
+      "min": 0,
+      "max": 1242.79
+    },
+    "GrossSales": {
+      "min": 3.02,
+      "max": 5945.4
+    },
+    "NetSales": {
+      "min": 2.42,
+      "max": 5927.1
+    },
+    "DeliveryDays": {
+      "min": 1,
+      "max": 10
+    },
+    "Rating": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "dimensions": {
+    "countries": 3,
+    "cities": 13,
+    "categories": 6,
+    "products": 29,
+    "channels": 3,
+    "payment_methods": 5,
+    "customer_segments": 3
+  },
+  "city_country_conflicts": [],
+  "product_category_conflicts": [],
+  "currency_field_present": false,
+  "formula_validation": {
+    "gross_sales_formula_mismatches": 0,
+    "net_sales_formula_mismatches": 0,
+    "discount_amount_vs_conventional_half_up_rounding": {
+      "exact_matches": 14782,
+      "one_cent_differences": 368,
+      "over_one_cent_differences": 0,
+      "max_difference_cents": 1
+    }
+  },
+  "caveats": [
+    "No currency field or currency code exists; amounts are unspecified dataset units.",
+    "The project describes the dataset as simulated.",
+    "Some discounts differ by one cent from conventional half-up rounding; confirm the source rule before changing the data."
+  ],
+  "kpis": {
+    "orders": 15150,
+    "unique_customers": 3173,
+    "gross_sales": "5004016.22",
+    "discount_amount": "384831.78",
+    "net_sales": "4619184.44",
+    "weighted_discount_rate_pct": "7.69",
+    "average_row_discount_pct": "7.79",
+    "average_order_value": "304.90",
+    "returned_orders": 879,
+    "return_rate_pct": "5.80",
+    "average_rating": "4.14",
+    "average_delivery_days": "5.51",
+    "average_quantity_per_order": "1.93",
+    "orders_rated_4_or_5_pct": "80.34"
+  },
+  "annual_sales": [
+    {
+      "year": "2023",
+      "orders": 5105,
+      "gross_sales": "1753414.11",
+      "discount_amount": "137720.25",
+      "net_sales": "1615693.86",
+      "average_order_value": "316.49",
+      "returned_orders": 308,
+      "return_rate_pct": "6.03",
+      "yoy_net_sales_change_pct": ""
+    },
+    {
+      "year": "2024",
+      "orders": 5028,
+      "gross_sales": "1623177.69",
+      "discount_amount": "121349.31",
+      "net_sales": "1501828.38",
+      "average_order_value": "298.69",
+      "returned_orders": 276,
+      "return_rate_pct": "5.49",
+      "yoy_net_sales_change_pct": "-7.05"
+    },
+    {
+      "year": "2025",
+      "orders": 5017,
+      "gross_sales": "1627424.42",
+      "discount_amount": "125762.22",
+      "net_sales": "1501662.20",
+      "average_order_value": "299.31",
+      "returned_orders": 295,
+      "return_rate_pct": "5.88",
+      "yoy_net_sales_change_pct": "-0.01"
+    }
+  ],
+  "monthly_sales_highest": {
+    "month": "2023-08",
+    "orders": 465,
+    "net_sales": "163113.70",
+    "average_order_value": "350.78",
+    "returned_orders": 24,
+    "return_rate_pct": "5.16",
+    "avg_rating": "4.11"
+  },
+  "monthly_sales_lowest": {
+    "month": "2024-04",
+    "orders": 395,
+    "net_sales": "104252.58",
+    "average_order_value": "263.93",
+    "returned_orders": 25,
+    "return_rate_pct": "6.33",
+    "avg_rating": "4.02"
+  },
+  "top_categories_by_net_sales": [
+    {
+      "name": "Electronics",
+      "orders": 2529,
+      "net_sales": "2811450.54",
+      "sales_share_pct": "60.86"
+    },
+    {
+      "name": "Home & Living",
+      "orders": 2488,
+      "net_sales": "577734.72",
+      "sales_share_pct": "12.51"
+    },
+    {
+      "name": "Sports",
+      "orders": 2500,
+      "net_sales": "471917.70",
+      "sales_share_pct": "10.22"
+    }
+  ],
+  "top_products_by_net_sales": [
+    {
+      "name": "Speaker",
+      "orders": 450,
+      "net_sales": "499537.49",
+      "sales_share_pct": "10.81"
+    },
+    {
+      "name": "Smartwatch",
+      "orders": 446,
+      "net_sales": "491609.31",
+      "sales_share_pct": "10.64"
+    },
+    {
+      "name": "Laptop",
+      "orders": 401,
+      "net_sales": "463159.50",
+      "sales_share_pct": "10.03"
+    },
+    {
+      "name": "Tablet",
+      "orders": 410,
+      "net_sales": "460045.82",
+      "sales_share_pct": "9.96"
+    },
+    {
+      "name": "Headphones",
+      "orders": 409,
+      "net_sales": "452202.35",
+      "sales_share_pct": "9.79"
+    }
+  ],
+  "top_return_rate_products": [
+    {
+      "product": "T-Shirt",
+      "orders": 409,
+      "returned_orders": 33,
+      "return_rate_pct": "8.07",
+      "net_sales": "46988.99",
+      "sales_share_pct": "1.02",
+      "average_rating": "4.09",
+      "average_order_value": "114.89"
+    },
+    {
+      "product": "Lamp",
+      "orders": 497,
+      "returned_orders": 39,
+      "return_rate_pct": "7.85",
+      "net_sales": "110592.34",
+      "sales_share_pct": "2.39",
+      "average_rating": "4.20",
+      "average_order_value": "222.52"
+    },
+    {
+      "product": "Cooking Oil",
+      "orders": 640,
+      "returned_orders": 49,
+      "return_rate_pct": "7.66",
+      "net_sales": "23940.59",
+      "sales_share_pct": "0.52",
+      "average_rating": "4.17",
+      "average_order_value": "37.41"
+    },
+    {
+      "product": "Running Shoes",
+      "orders": 635,
+      "returned_orders": 46,
+      "return_rate_pct": "7.24",
+      "net_sales": "117995.21",
+      "sales_share_pct": "2.55",
+      "average_rating": "4.20",
+      "average_order_value": "185.82"
+    },
+    {
+      "product": "Tablet",
+      "orders": 410,
+      "returned_orders": 28,
+      "return_rate_pct": "6.83",
+      "net_sales": "460045.82",
+      "sales_share_pct": "9.96",
+      "average_rating": "4.17",
+      "average_order_value": "1122.06"
+    }
+  ],
+  "limitations": [
+    "The dataset is described as simulated, not actual company performance.",
+    "No currency or code is present, so regional monetary comparisons may be invalid if currencies differ.",
+    "No cost data is present, so profit and margin cannot be calculated.",
+    "Return reasons are absent; high rates identify investigation priorities, not causes."
+  ]
+}
